@@ -1,4 +1,4 @@
-import { UIRouter, StateRegistry, Transition, StateService, StateParams, Ng2StateDeclaration } from "@uirouter/angular"
+import { UIRouter, StateRegistry, Transition, StateService, StateParams, Ng2StateDeclaration } from '@uirouter/angular';
 
 
 
@@ -10,10 +10,14 @@ export const appState: Ng2StateDeclaration = {
     url: '/web',
     views: {
       '$default': {
-        component: MyMainComponent //fuseMainCompoent
+        component: MyMainComponent
       },
       'menu@app': {
-        component: MenuComponent //fuseMainCompoent
-      }
+        component: MenuComponent       }
     }
   };
+
+
+  export const ESTADOS_UIROUTER = [
+    appState
+  ]

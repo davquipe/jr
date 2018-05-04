@@ -9,9 +9,19 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
+// Componentes
 import { AppComponent } from './app.component';
 import { MyMainComponent } from './my.main.component';
 import { MenuComponent } from './menu/menu.component';
+
+// Modulos
+import { MainModule } from './main/main.modules';
+import { ESTADOS_UIROUTER } from './test.states';
+import { routerConfigFn } from './routing.config';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +32,14 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     HttpModule,
-    UIRouterModule
+    UIRouterModule.forRoot({
+      states: ESTADOS_UIROUTER,
+      useHash: false,
+      otherwise: { state: 'app' },
+      config: routerConfigFn
+    }),
+    MainModule
+
   ],
   providers: [
     HttpClientModule
