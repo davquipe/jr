@@ -22,6 +22,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
         SidebarComponent
     ],
     exports: [
+        BreadcrumbsComponent,
+        HeaderComponent,
+        NopagefoundComponent,
+        SidebarComponent
     ]
 })
 export class SharedModule { }

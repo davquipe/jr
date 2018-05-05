@@ -1,13 +1,17 @@
-
+import { UIRouter, UIRouterModule } from '@uirouter/angular';
 import { NgModule } from '@angular/core';
 
 
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
+// Modulo
+import { SharedModule } from '../shared/shared.module';
+import { PAGES_STATES } from './pages.states';
 
 // Componentes
 import { PagesComponent } from './pages.component';
+
+
+
 
 
 
@@ -16,10 +20,11 @@ import { PagesComponent } from './pages.component';
         PagesComponent
     ],
     exports: [
+        PagesComponent
     ],
     imports: [
-        CommonModule,
-        FormsModule
+        UIRouterModule.forChild({ states : PAGES_STATES}),
+        SharedModule
     ]
 })
 export class PagesModule { }
