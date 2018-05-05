@@ -15,9 +15,10 @@ import { MyMainComponent } from './my.main.component';
 import { MenuComponent } from './menu/menu.component';
 
 // Modulos
-import { MainModule } from './main/main.modules';
 import { ESTADOS_UIROUTER } from './test.states';
 import { routerConfigFn } from './routing.config';
+import { PagesModule } from './pages/pages.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -32,13 +33,14 @@ import { routerConfigFn } from './routing.config';
   imports: [
     BrowserModule,
     HttpModule,
+    PagesModule,
+    SharedModule,
     UIRouterModule.forRoot({
       states: ESTADOS_UIROUTER,
       useHash: false,
       otherwise: { state: 'app' },
       config: routerConfigFn
-    }),
-    MainModule
+    })
 
   ],
   providers: [
