@@ -9,6 +9,7 @@ import { PAGES_STATES } from './pages.states';
 
 // Componentes
 import { PagesComponent } from './pages.component';
+import { ProveedoresComponent } from './proveedores/proveedor.component';
 
 
 
@@ -17,7 +18,9 @@ import { PagesComponent } from './pages.component';
 
 @NgModule({
     declarations: [
-        PagesComponent
+        PagesComponent,
+        ProveedoresComponent,
+        ProveedoresComponent
     ],
     exports: [
         PagesComponent
