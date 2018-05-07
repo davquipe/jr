@@ -1,10 +1,19 @@
-<div>
+<div style="background-color:red" class="row">
     <app-header></app-header>
 </div>
-<div>
-    <app-sidebar></app-sidebar>
+<div style="background-color:green" class="row">
+    <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9">
+        <div style="background-color:yellow;" class="row">
+            <app-breadcrumbs></app-breadcrumbs>
+        </div>
+        <ui-view name="actions" style="background-color:blue;" class="row">
+            actions@app
+        </ui-view>
+        <ui-view name="content" style="background-color:red;" class="row">
+            content@app
+        </ui-view>
+    </div>
 </div>
-<div>
-    <app-breadcrumbs></app-breadcrumbs>
-</div>
-<ui-view></ui-view>
