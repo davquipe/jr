@@ -9,7 +9,7 @@ export function getAllPages(pagSvc) {
 
 export const appState: Ng2StateDeclaration = {
     name: 'app',
-    url: '/web',
+    url: '',
     views: {
       '$default': {
         component: PagesComponent
