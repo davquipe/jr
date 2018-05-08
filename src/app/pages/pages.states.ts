@@ -68,7 +68,7 @@ export const appState: Ng2StateDeclaration = {
       let modalRef: NgbModalRef = uibModal.open(NuevoComponent, { size: 'lg' });
       (<NuevoComponent>modalRef.componentInstance).greeting = 'aaaaa';
       (<NuevoComponent>modalRef.componentInstance).proveedores = proveedores;
-  
+
       modalRef.result.then(
         (msg: any) => {
           stateService.go('^');
