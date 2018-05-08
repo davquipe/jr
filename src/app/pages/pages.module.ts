@@ -9,26 +9,27 @@ import { PAGES_STATES } from './pages.states';
 
 // Componentes
 import { PagesComponent } from './pages.component';
-import { ProveedorComponent } from './proveedores/proveedor.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { ResultadosComponent } from './proveedores/resultados/resultados.component';
+import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
 
 
-
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
         PagesComponent,
-        ProveedorComponent,
-        ProveedoresComponent
+        ProveedoresComponent,
+        ResultadosComponent,
+        NuevoComponent
     ],
     exports: [
         PagesComponent
     ],
     imports: [
         UIRouterModule.forChild({ states : PAGES_STATES}),
-        SharedModule
+        SharedModule,
+        NgbModule
     ]
 })
 export class PagesModule { }
