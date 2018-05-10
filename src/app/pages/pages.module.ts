@@ -12,19 +12,16 @@ import { PagesComponent } from './pages.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ResultadosComponent } from './proveedores/resultados/resultados.component';
 import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
-import { ProductosComponent } from './productos/productos.component';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
 
 @NgModule({
     declarations: [
         PagesComponent,
         ProveedoresComponent,
         ResultadosComponent,
-        NuevoComponent,
-        ProductosComponent,
-        ProductoResultsComponent
+        NuevoComponent
     ],
     exports: [
         PagesComponent

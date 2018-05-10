@@ -1,6 +1,7 @@
+<pre>{{proveedoresPage.content[0].nombres}}</pre>
 <table class="table">
     <thead>
-        <tr>
+        <tr >
             <th scope="col">#</th>
             <th scope="col">First</th>
             <th scope="col">Last</th>
@@ -8,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr ng-repeat="p in proveedoresPage.content ">
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
