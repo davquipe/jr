@@ -21,6 +21,6 @@ export class ProveedorService {
   getCategory(id) {
     console.log(id);
     return this.getCategories()
-      .then(cats => cats.find(cat => cat.id == id));
+      .then(cats => cats.find(cat => cat.id === id));
   }
 }

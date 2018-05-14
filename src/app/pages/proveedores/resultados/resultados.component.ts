@@ -14,7 +14,6 @@ export class ResultadosComponent implements OnInit {
 
   ngOnInit() {
     alert(2);
-    debugger;
 
     // this.proveedoresPage.// manu;
   }

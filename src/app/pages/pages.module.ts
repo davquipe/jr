@@ -16,6 +16,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         ResultadosComponent,
         NuevoComponent,
         ProductosComponent,
-        ProductoResultsComponent
+        ProductoResultsComponent,
+        NuevoproComponent,
     ],
     exports: [
         PagesComponent

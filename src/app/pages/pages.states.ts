@@ -11,6 +11,7 @@ import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
 import { ProveedorService } from '../services/proveedor.service';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
+import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
 
 
 export function getAllPages(pagSvc) {
@@ -136,6 +137,17 @@ export const productosResultadoState: Ng2StateDeclaration = {
   },
 };
 
+export const nuevoproBusquedaState: Ng2StateDeclaration = {
+  name: 'app.productos.nuevopro',
+  url: '/nuevo',
+  views: {
+    'actions@app': {
+      component: NuevoproComponent
+    },
+  },
+};
+
+
 
 
 export const PAGES_STATES = [
@@ -145,5 +157,6 @@ export const PAGES_STATES = [
   proveedoresModalNuevoState,
   ProveedorNuevoState,
   productosBusquedaState,
-  productosResultadoState
+  productosResultadoState,
+  nuevoproBusquedaState
 ];

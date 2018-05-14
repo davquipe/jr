@@ -1,32 +1,37 @@
-<div>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name of Product</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto </td>
-                <td>12.31</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>31.99</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>42.12</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<div class="container">
+    <pre>{{productosPage.content[1].nombres}}</pre>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Tabla</h4>
+                        <p class="category">Lista ca ad asd3qwd asd asdasd</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Numero Documento</th>
+                                    <th>Nombre</th>
+                                    <th>Codigo</th>
+                                    <th>Tipo Documento</th>
+                                    <th>Version</th>
+                                </tr>
+                                <thead>
+                                    <tr>
+                                        <td>{{productosPage.content[1].tipoDocumento}}</td>
+                                        <td>{{productosPage.content[2].nroDocumento}}</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                            </thead>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
