@@ -18,6 +18,9 @@ import { ProductoResultsComponent } from './productos/resultados/producto.result
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
 
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
     declarations: [
         PagesComponent,
@@ -34,7 +37,9 @@ import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
     imports: [
         UIRouterModule.forChild({ states : PAGES_STATES}),
         SharedModule,
-        NgbModule
+        NgbModule,
+        FormsModule,
+        CommonModule
     ]
 })
 export class PagesModule { }
