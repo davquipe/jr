@@ -1,37 +1,22 @@
-<div class="container">
-    <pre>{{productosPage.content[1].nombres}}</pre>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Tabla</h4>
-                        <p class="category">Lista ca ad asd3qwd asd asdasd</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Numero Documento</th>
-                                    <th>Nombre</th>
-                                    <th>Codigo</th>
-                                    <th>Tipo Documento</th>
-                                    <th>Version</th>
-                                </tr>
-                                <thead>
-                                    <tr>
-                                        <td>{{productosPage.content[1].tipoDocumento}}</td>
-                                        <td>{{productosPage.content[2].nroDocumento}}</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </thead>
-                            </thead>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Documento</th>
+            <th scope="col">N° Documento</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Version</th>
+            <th scope="col">Creado por</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let productoresultsPage of productoresultsPage.content">
+            <td>{{productoresultsPage.nombres}}</td>
+            <td>{{productoresultsPage.tipoDocumento}}</td>
+            <td>{{productoresultsPage.nroDocumento}}</td>
+            <td>{{productoresultsPage.codigo}}</td>
+            <td>{{productoresultsPage.version}}</td>
+            <td>{{productoresultsPage.createdBy}}</td>
+        </tr>
+    </tbody>
+</table>

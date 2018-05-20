@@ -7,12 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductoResultsComponent implements OnInit {
 
   @Input()
-  productosPage;
+  productoresultsPage;
 
   constructor() { }
 
   ngOnInit() {
-    alert(2);
+    alert('Ver Resultados de Productos');
 
   } // dasdasd
 

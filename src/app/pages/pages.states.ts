@@ -10,6 +10,7 @@ import { ResultadosComponent } from './proveedores/resultados/resultados.compone
 import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
 import { ProveedorService } from '../services/proveedor.service';
 import { ProductosComponent } from './productos/productos.component';
+import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
 
 
 export function getAllPages(pagSvc) {
@@ -114,6 +115,26 @@ export const productosBusquedaState: Ng2StateDeclaration = {
   },
 };
 
+export const productoresultsResultadoState: Ng2StateDeclaration = {
+  name: 'app.productos.resultados',
+  url: '/resultados',
+  resolve: [
+    {
+      token: 'productoresultsPage',
+      deps: [Transition, Http],
+      resolveFn: (trans, http) => {
+        return http.get('/assets/data.json')
+          .map( (resp) => { return resp.json() })
+          .toPromise();
+      }
+    }
+  ],
+  views: {
+    'content@app': {
+      component: ProductoResultsComponent
+    },
+  },
+};
 
 export const PAGES_STATES = [
   appState,
@@ -121,5 +142,6 @@ export const PAGES_STATES = [
   proveedoresResultadoState,
   proveedoresModalNuevoState,
   ProveedorNuevoState,
-  productosBusquedaState
+  productosBusquedaState,
+  productoresultsResultadoState
 ];
