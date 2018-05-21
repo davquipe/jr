@@ -11,6 +11,7 @@ import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
 import { ProveedorService } from '../services/proveedor.service';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
+import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
 
 
 export function getAllPages(pagSvc) {
@@ -46,7 +47,7 @@ export const proveedoresResultadoState: Ng2StateDeclaration = {
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
         return http.get('/assets/data.json')
-          .map( (resp) => { return resp.json() })
+          .map( (resp) => resp.json())
           .toPromise();
       }
     }
@@ -117,14 +118,14 @@ export const productosBusquedaState: Ng2StateDeclaration = {
 
 export const productoresultsResultadoState: Ng2StateDeclaration = {
   name: 'app.productos.resultados',
-  url: '/resultados',
+  url: newFunction(),
   resolve: [
     {
       token: 'productoresultsPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
         return http.get('/assets/data.json')
-          .map( (resp) => { return resp.json() })
+          .map( (resp) => resp.json())
           .toPromise();
       }
     }
@@ -136,6 +137,16 @@ export const productoresultsResultadoState: Ng2StateDeclaration = {
   },
 };
 
+export const NuevoproNuevoState: Ng2StateDeclaration = {
+  name: 'app.productos.nuevopro',
+  url: '/nuevo',
+  views: {
+    'content@app': {
+      component: NuevoproComponent
+    }
+  }
+};
+
 export const PAGES_STATES = [
   appState,
   proveedoresBusquedaState,
@@ -143,5 +154,10 @@ export const PAGES_STATES = [
   proveedoresModalNuevoState,
   ProveedorNuevoState,
   productosBusquedaState,
-  productoresultsResultadoState
+  productoresultsResultadoState,
+  NuevoproNuevoState
 ];
+function newFunction(): string {
+  return '/resultados';
+}
+
