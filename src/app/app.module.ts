@@ -15,7 +15,7 @@ import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ProveedorService } from './services/proveedor.service';
+// import { ProveedorService } from './services/proveedor.service';
 
 
 
@@ -39,7 +39,7 @@ import { ProveedorService } from './services/proveedor.service';
   ],
   providers: [
     HttpClientModule,
-    ProveedorService
+    // ProveedorService
   ],
   bootstrap: [AppComponent]
 })

@@ -8,10 +8,9 @@ import { PagesComponent } from './pages.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ResultadosComponent } from './proveedores/resultados/resultados.component';
 import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
-import { ProveedorService } from '../services/proveedor.service';
+// import { ProveedorService } from '../services/proveedor.service';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
-import { NuevoproComponent } from './productos/nuevo/nuevopro.component';
 
 
 export function getAllPages(pagSvc) {
@@ -40,14 +39,23 @@ export const proveedoresBusquedaState: Ng2StateDeclaration = {
 
 export const proveedoresResultadoState: Ng2StateDeclaration = {
   name: 'app.proveedores.resultados',
-  url: '/resultados',
+  url: '/resultados?page',
+  // params: { folderId: 'inbox' },
   resolve: [
     {
       token: 'proveedoresPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
-        return http.get('/assets/data.json')
-          .map( (resp) => resp.json())
+
+        var params = {
+          page: trans.params().page;
+        }
+        return http.get('/encuestas/preguntas', { params: params })
+          .map((resp: any) => {
+            alert(33);
+            debugger;
+            return resp.json();
+          })
           .toPromise();
       }
     }
@@ -65,7 +73,7 @@ export const proveedoresModalNuevoState: Ng2StateDeclaration = {
   resolve: [
     {
       token: 'proveedores',
-      deps: [Transition, ProveedorService],
+      // deps: [Transition, ProveedorService],
       resolveFn: (trans, menuSvc) => {
         return menuSvc.getCategories().then(function(resp) {
           return resp;
@@ -118,14 +126,19 @@ export const productosBusquedaState: Ng2StateDeclaration = {
 
 export const productoresultsResultadoState: Ng2StateDeclaration = {
   name: 'app.productos.resultados',
-  url: newFunction(),
+  url: '/resultados',
   resolve: [
     {
       token: 'productoresultsPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
+<<<<<<< HEAD
         return http.get('http://192.168.1.34:7072/encuestas/preguntas')
           .map( (resp) => resp.json())
+=======
+        return http.get('/assets/data.json')
+          .map( (resp) => { return resp.json() })
+>>>>>>> d1eadc8229b0349f9df0ff052201349db1c297ff
           .toPromise();
       }
     }
@@ -137,16 +150,6 @@ export const productoresultsResultadoState: Ng2StateDeclaration = {
   },
 };
 
-export const NuevoproNuevoState: Ng2StateDeclaration = {
-  name: 'app.productos.nuevopro',
-  url: '/nuevo',
-  views: {
-    'content@app': {
-      component: NuevoproComponent
-    }
-  }
-};
-
 export const PAGES_STATES = [
   appState,
   proveedoresBusquedaState,
@@ -154,10 +157,5 @@ export const PAGES_STATES = [
   proveedoresModalNuevoState,
   ProveedorNuevoState,
   productosBusquedaState,
-  productoresultsResultadoState,
-  NuevoproNuevoState
+  productoresultsResultadoState
 ];
-function newFunction(): string {
-  return '/resultados';
-}
-
