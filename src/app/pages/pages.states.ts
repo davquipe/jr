@@ -39,16 +39,23 @@ export const proveedoresBusquedaState: Ng2StateDeclaration = {
 
 export const proveedoresResultadoState: Ng2StateDeclaration = {
   name: 'app.proveedores.resultados',
-  url: '/resultados',
+  url: '/resultados?page',
+  // params: { folderId: 'inbox' },
   resolve: [
     {
       token: 'proveedoresPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
-        return http.get('/encuestas/preguntas')
-          .map( (resp: any) => {
-             return resp.json();
-            })
+
+        var params = {
+          page: trans.params().page;
+        }
+        return http.get('/encuestas/preguntas', { params: params })
+          .map((resp: any) => {
+            alert(33);
+            debugger;
+            return resp.json();
+          })
           .toPromise();
       }
     }
