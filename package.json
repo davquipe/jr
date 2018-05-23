@@ -23,6 +23,7 @@
         "@ng-bootstrap/ng-bootstrap": "^2.0.0",
         "@uirouter/angular": "^1.1.0",
         "@uirouter/visualizer": "^6.0.0",
+        "angular-ui-router": "^1.0.18",
         "core-js": "^2.5.4",
         "rxjs": "^6.1.0",
         "rxjs-compat": "^6.1.0",
