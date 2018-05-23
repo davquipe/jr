@@ -8,7 +8,7 @@ import { PagesComponent } from './pages.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ResultadosComponent } from './proveedores/resultados/resultados.component';
 import { NuevoComponent } from './proveedores/nuevo/nuevo.component';
-import { ProveedorService } from '../services/proveedor.service';
+// import { ProveedorService } from '../services/proveedor.service';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoResultsComponent } from './productos/resultados/producto.results.component';
 
@@ -66,7 +66,7 @@ export const proveedoresModalNuevoState: Ng2StateDeclaration = {
   resolve: [
     {
       token: 'proveedores',
-      deps: [Transition, ProveedorService],
+      // deps: [Transition, ProveedorService],
       resolveFn: (trans, menuSvc) => {
         return menuSvc.getCategories().then(function(resp) {
           return resp;
