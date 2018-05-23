@@ -1,9 +1,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Documento</th>
-            <th scope="col">N° Documento</th>
+            <th scope="col">Id</th>
+            <th scope="col">Label</th>
+            <th scope="col">Tamañlo</th>
             <th scope="col">Codigo</th>
             <th scope="col">Version</th>
             <th scope="col">Creado por</th>
@@ -11,12 +11,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let productoresultsPage of productoresultsPage.content">
-            <td>{{productoresultsPage.nombres}}</td>
-            <td>{{productoresultsPage.tipoDocumento}}</td>
-            <td>{{productoresultsPage.nroDocumento}}</td>
+            <td>{{productoresultsPage.id}}</td>
+            <td>{{productoresultsPage.label}}</td>
+            <td>{{productoresultsPage.tamanio}}</td>
             <td>{{productoresultsPage.codigo}}</td>
             <td>{{productoresultsPage.version}}</td>
             <td>{{productoresultsPage.createdBy}}</td>
         </tr>
     </tbody>
+    <p>Default pagination:</p>
+    <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+
 </table>

@@ -124,7 +124,7 @@ export const productoresultsResultadoState: Ng2StateDeclaration = {
       token: 'productoresultsPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
-        return http.get('/assets/data.json')
+        return http.get('http://192.168.1.34:7072/encuestas/preguntas')
           .map( (resp) => resp.json())
           .toPromise();
       }

@@ -25,6 +25,7 @@
         "@uirouter/visualizer": "^6.0.0",
         "angular-ui-router": "^1.0.18",
         "core-js": "^2.5.4",
+        "ng-bootstrap-pagination": "^0.2.3",
         "rxjs": "^6.1.0",
         "rxjs-compat": "^6.1.0",
         "zone.js": "^0.8.26"

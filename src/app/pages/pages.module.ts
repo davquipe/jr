@@ -29,7 +29,7 @@ import { CommonModule } from '@angular/common';
         NuevoComponent,
         ProductosComponent,
         ProductoResultsComponent,
-        NuevoproComponent,
+        NuevoproComponent
     ],
     exports: [
         PagesComponent
