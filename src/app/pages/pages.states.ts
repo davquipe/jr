@@ -45,8 +45,10 @@ export const proveedoresResultadoState: Ng2StateDeclaration = {
       token: 'proveedoresPage',
       deps: [Transition, Http],
       resolveFn: (trans, http) => {
-        return http.get('/assets/data.json')
-          .map( (resp) => { return resp.json() })
+        return http.get('/encuestas/preguntas')
+          .map( (resp: any) => {
+             return resp.json();
+            })
           .toPromise();
       }
     }
